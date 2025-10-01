@@ -15,12 +15,13 @@ const investmentPlans = [
   {
     name: "Starter Plan",
     icon: Zap,
-    returns: "8-12%",
-    duration: "6 Months",
-    minInvestment: "$1,000",
+    returns: "2.5% daily",
+    duration: "7 days",
+    minInvestment: "$100",
+    maxInvestment: "$3,000",
     features: [
       "Low-risk portfolio",
-      "Monthly returns",
+      "Daily returns",
       "Flexible withdrawal",
       "24/7 support",
     ],
@@ -31,12 +32,13 @@ const investmentPlans = [
   {
     name: "Growth Plan",
     icon: TrendingUp,
-    returns: "15-20%",
-    duration: "12 Months",
-    minInvestment: "$5,000",
+    returns: "3% daily",
+    duration: "7 days",
+    minInvestment: "$3,000",
+    maxInvestment: "$9,999",
     features: [
       "Balanced risk-reward",
-      "Quarterly dividends",
+      "Daily dividends",
       "Portfolio diversification",
       "Dedicated advisor",
     ],
@@ -47,12 +49,13 @@ const investmentPlans = [
   {
     name: "Premium Plan",
     icon: Crown,
-    returns: "25-35%",
-    duration: "24 Months",
-    minInvestment: "$25,000",
+    returns: "3.5% daily",
+    duration: "7 days",
+    minInvestment: "$10,000",
+    maxInvestment: "$49,999",
     features: [
       "High-growth opportunities",
-      "Monthly compounding",
+      "Daily compounding",
       "Priority support",
       "Exclusive market access",
     ],
@@ -63,9 +66,10 @@ const investmentPlans = [
   {
     name: "Elite Plan",
     icon: Shield,
-    returns: "40-50%",
-    duration: "36 Months",
-    minInvestment: "$100,000",
+    returns: "4% daily",
+    duration: "7 days",
+    minInvestment: "$50,000",
+    maxInvestment: "No Limit",
     features: [
       "Maximum returns",
       "Custom portfolio",
@@ -98,7 +102,8 @@ export function InvestmentPlans() {
               key={index}
               className={`border-border hover:border-accent transition-all relative ${
                 plan.popular ? "ring-2 ring-accent shadow-lg scale-105" : ""
-              }`}
+              } grid grid-rows-[auto,1fr,auto]`}
+              style={{ display: "grid", gridTemplateRows: "auto 1fr auto" }}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -117,7 +122,7 @@ export function InvestmentPlans() {
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
               </CardHeader>
 
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-6 flex flex-col">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
@@ -158,6 +163,21 @@ export function InvestmentPlans() {
                       </p>
                     </div>
                   </div>
+                  {plan.maxInvestment && (
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <DollarSign className="w-5 h-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">
+                          Maximum Investment
+                        </p>
+                        <p className="text-lg font-bold text-foreground">
+                          {plan.maxInvestment}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="pt-4 border-t border-border">
@@ -173,8 +193,10 @@ export function InvestmentPlans() {
                     ))}
                   </ul>
                 </div>
+              </CardContent>
 
-                <Link href={`/plans/${plan.slug}`}>
+              <div className="p-4 flex items-end">
+                <Link href={`/plans/${plan.slug}`} className="w-full">
                   <Button
                     className={`w-full ${
                       plan.popular
@@ -186,7 +208,7 @@ export function InvestmentPlans() {
                     Invest Now
                   </Button>
                 </Link>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
