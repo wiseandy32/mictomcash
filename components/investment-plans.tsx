@@ -81,7 +81,7 @@ const investmentPlans = [
 export function InvestmentPlans() {
   return (
     <section id="plans" className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-0">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             Investment Plans
@@ -92,7 +92,7 @@ export function InvestmentPlans() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 border border-red-500">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {investmentPlans.map((plan, index) => (
             <Card
               key={index}

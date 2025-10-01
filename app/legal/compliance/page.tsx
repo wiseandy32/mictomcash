@@ -7,7 +7,7 @@ export default function CompliancePage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-0 py-16 lg:py-24">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-start gap-4 mb-6">
               <Shield className="w-10 h-10 text-accent flex-shrink-0 mt-1" />
