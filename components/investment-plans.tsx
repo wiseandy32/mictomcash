@@ -1,8 +1,15 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { TrendingUp, Clock, DollarSign, Shield, Zap, Crown } from "lucide-react"
-import Link from "next/link"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  TrendingUp,
+  Clock,
+  DollarSign,
+  Shield,
+  Zap,
+  Crown,
+} from "lucide-react";
+import Link from "next/link";
 
 const investmentPlans = [
   {
@@ -11,7 +18,12 @@ const investmentPlans = [
     returns: "8-12%",
     duration: "6 Months",
     minInvestment: "$1,000",
-    features: ["Low-risk portfolio", "Monthly returns", "Flexible withdrawal", "24/7 support"],
+    features: [
+      "Low-risk portfolio",
+      "Monthly returns",
+      "Flexible withdrawal",
+      "24/7 support",
+    ],
     popular: false,
     color: "from-blue-500/10 to-blue-500/5",
     slug: "starter",
@@ -22,7 +34,12 @@ const investmentPlans = [
     returns: "15-20%",
     duration: "12 Months",
     minInvestment: "$5,000",
-    features: ["Balanced risk-reward", "Quarterly dividends", "Portfolio diversification", "Dedicated advisor"],
+    features: [
+      "Balanced risk-reward",
+      "Quarterly dividends",
+      "Portfolio diversification",
+      "Dedicated advisor",
+    ],
     popular: true,
     color: "from-accent/20 to-accent/5",
     slug: "growth",
@@ -33,7 +50,12 @@ const investmentPlans = [
     returns: "25-35%",
     duration: "24 Months",
     minInvestment: "$25,000",
-    features: ["High-growth opportunities", "Monthly compounding", "Priority support", "Exclusive market access"],
+    features: [
+      "High-growth opportunities",
+      "Monthly compounding",
+      "Priority support",
+      "Exclusive market access",
+    ],
     popular: false,
     color: "from-amber-500/10 to-amber-500/5",
     slug: "premium",
@@ -44,12 +66,17 @@ const investmentPlans = [
     returns: "40-50%",
     duration: "36 Months",
     minInvestment: "$100,000",
-    features: ["Maximum returns", "Custom portfolio", "Personal wealth manager", "VIP benefits"],
+    features: [
+      "Maximum returns",
+      "Custom portfolio",
+      "Personal wealth manager",
+      "VIP benefits",
+    ],
     popular: false,
     color: "from-purple-500/10 to-purple-500/5",
     slug: "elite",
   },
-]
+];
 
 export function InvestmentPlans() {
   return (
@@ -60,11 +87,12 @@ export function InvestmentPlans() {
             Investment Plans
           </h2>
           <p className="text-lg text-muted-foreground text-pretty">
-            Select the plan that aligns with your financial goals and risk tolerance
+            Select the plan that aligns with your financial goals and risk
+            tolerance
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 border border-red-500">
           {investmentPlans.map((plan, index) => (
             <Card
               key={index}
@@ -74,7 +102,9 @@ export function InvestmentPlans() {
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-accent text-accent-foreground">Most Popular</Badge>
+                  <Badge className="bg-accent text-accent-foreground">
+                    Most Popular
+                  </Badge>
                 </div>
               )}
 
@@ -94,8 +124,12 @@ export function InvestmentPlans() {
                       <TrendingUp className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">Expected Returns</p>
-                      <p className="text-lg font-bold text-foreground">{plan.returns}</p>
+                      <p className="text-xs text-muted-foreground">
+                        Expected Returns
+                      </p>
+                      <p className="text-lg font-bold text-foreground">
+                        {plan.returns}
+                      </p>
                     </div>
                   </div>
 
@@ -105,7 +139,9 @@ export function InvestmentPlans() {
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground">Duration</p>
-                      <p className="text-lg font-bold text-foreground">{plan.duration}</p>
+                      <p className="text-lg font-bold text-foreground">
+                        {plan.duration}
+                      </p>
                     </div>
                   </div>
 
@@ -114,8 +150,12 @@ export function InvestmentPlans() {
                       <DollarSign className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">Minimum Investment</p>
-                      <p className="text-lg font-bold text-foreground">{plan.minInvestment}</p>
+                      <p className="text-xs text-muted-foreground">
+                        Minimum Investment
+                      </p>
+                      <p className="text-lg font-bold text-foreground">
+                        {plan.minInvestment}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -123,7 +163,10 @@ export function InvestmentPlans() {
                 <div className="pt-4 border-t border-border">
                   <ul className="space-y-2">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
                         <span className="text-accent mt-0.5">✓</span>
                         <span>{feature}</span>
                       </li>
@@ -134,7 +177,9 @@ export function InvestmentPlans() {
                 <Link href={`/plans/${plan.slug}`}>
                   <Button
                     className={`w-full ${
-                      plan.popular ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-transparent"
+                      plan.popular
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                        : "bg-transparent"
                     }`}
                     variant={plan.popular ? "default" : "outline"}
                   >
@@ -148,11 +193,11 @@ export function InvestmentPlans() {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
-            All returns are estimates based on historical performance. Past performance does not guarantee future
-            results.
+            All returns are estimates based on historical performance. Past
+            performance does not guarantee future results.
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }

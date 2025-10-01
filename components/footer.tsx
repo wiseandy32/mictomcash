@@ -4,7 +4,9 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Investment Plans</h3>
+            <h3 className="font-semibold text-foreground mb-4">
+              Investment Plans
+            </h3>
             <ul className="space-y-3">
               <li>
                 <a
@@ -158,15 +160,26 @@ export function Footer() {
 
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">© 2025 Apex Capital. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">
+              © 2025 MitomCash. All rights reserved.
+            </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href="#"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
                 LinkedIn
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href="#"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
                 Twitter
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href="#"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
                 Facebook
               </a>
             </div>
@@ -174,5 +187,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
